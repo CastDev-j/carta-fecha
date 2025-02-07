@@ -1,3 +1,7 @@
+---
+import '@/styles/global.css'
+---
+
 <!doctype html>
 <html lang="en">
 	<head>
@@ -7,7 +11,9 @@
 		<meta name="generator" content={Astro.generator} />
 		<title>Astro Basics</title>
 	</head>
-	<body>
+	<body
+		class="bg-pink-200 text-neutral-950 flex justify-center items-center px-4"
+	>
 		<slot />
 	</body>
 </html>
@@ -19,4 +25,23 @@
 		width: 100%;
 		height: 100%;
 	}
+</style>
+
+<style is:global>
+
+	.fade-up{
+		animation: fade-up 0.5s ease-out;
+	}
+
+	@keyframes fade-up {
+		from {
+			opacity: 0;
+			transform: translateY(20px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
 </style>
